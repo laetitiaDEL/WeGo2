@@ -1,0 +1,14 @@
+/* _____________________HEADER____________________*/
+
+header {
+  background-color: #3A4369;
+}
+
+header .nav-link, footer .nav-link {
+  color: #FCFAEE;
+}
+
+
+footer {
+  background-color: #2FC6B0;
+}
