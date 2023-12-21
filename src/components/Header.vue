@@ -8,7 +8,7 @@
                 </button>
                 <div class="collapse navbar-collapse">
                     <div class="navbar-nav">
-                        <router-link to="/home" class="nav-link" aria-current="page" href="#">Accueil</router-link>
+                        <router-link to="/ " class="nav-link" aria-current="page" href="#">Accueil</router-link>
                         <router-link to="/history" class="nav-link" href="#">Mes sorties passées</router-link>
                         <router-link to="/createOuting" class="nav-link" href="#">Créer une sortie</router-link>
                         <router-link to="/messaging" class="nav-link" href="#">Messages</router-link>

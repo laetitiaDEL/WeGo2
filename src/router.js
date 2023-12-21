@@ -9,6 +9,26 @@ const routes =  [
     {
         path: "/",
         name: "home"
+    },
+    {
+        path: "/history",
+        name: "history"
+    },
+    {
+        path: "/createOuting",
+        name: "createOuting"
+    },
+    {
+        path: "/messaging",
+        name: "messaging"
+    },
+    {
+        path: "/myAccount",
+        name: "myAccount"
+    },
+    {
+        path: "/home",
+        name: "home"
     }
     ];
     
