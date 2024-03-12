@@ -8,27 +8,45 @@ import { createWebHistory, createRouter } from "vue-router";
 const routes =  [
     {
         path: "/",
-        name: "home"
+        component: () => import("./components/Home.vue"),
+        alias: '/home'
     },
     {
         path: "/history",
-        name: "history"
+        component: () => import("./components/History.vue"),
+    },
+    {
+        path: "/settings",
+        component: () => import("./components/Settings.vue"),
     },
     {
         path: "/createOuting",
-        name: "createOuting"
+        component: () => import("./components/CreateOuting.vue"),
     },
     {
         path: "/messaging",
-        name: "messaging"
+        component: () => import("./components/Messaging.vue"),
+    },
+    {
+        path: "/terms",
+        component: () => import("./components/Terms.vue"),
+    },
+    {
+        path: "/privacy",
+        component: () => import("./components/Privacy.vue"),
+    },
+    {
+        path: "/contact",
+        component: () => import("./components/Contact.vue"),
     },
     {
         path: "/myAccount",
-        name: "myAccount"
+        component: () => import("./components/MyAccount.vue"),
     },
     {
-        path: "/home",
-        name: "home"
+        path: "/:pathMatch(.*)*",
+        name: "error404",
+        component: () => import("/src/components/Error404.vue")
     }
     ];
     
@@ -38,3 +56,5 @@ const routes =  [
     });
     
     export default router;
+
+    

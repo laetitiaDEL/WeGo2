@@ -19,8 +19,24 @@
 
 /*_____________________WIDTH______________________*/
 
+.w50{
+  width: 50%;
+}
+
+.w60{
+  width: 60%;
+}
+
+.w70{
+  width: 70%;
+}
+
 .w80{
   width: 80%;
+}
+
+.w90{
+  width: 90%;
 }
 
 img{
@@ -124,6 +140,10 @@ header .nav-link, footer .nav-link {
   }  
 }
 
+.blue-shadow{
+  box-shadow: 10px 10px #2FC6B0;
+}
+
 /*_______________________IMAGES___________________*/
 
 .outingPP{
@@ -135,6 +155,11 @@ header .nav-link, footer .nav-link {
   width: 20px;
   height: 20px;
   margin: 2px;
+}
+
+img{
+  width: 100%;
+  height: auto;
 }
 
 
@@ -172,7 +197,7 @@ header {
 .search-container>p::after{
   content: url('/src/assets/loupe.png');
   position: relative;
-  right: -250px;
+  right: -260px;
   top: 2px;
   width: 25px;
   height: 25px;
@@ -204,20 +229,6 @@ header {
 
 /*______________________DECO_____________________*/
 
-.blue-deco{
-  position:relative;
-  z-index: 2;
-}
-
-.blue-deco::after{
-  content: url('/src/assets/homeDeco2.png');
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 30%;
-  height: auto;
-  z-index: 1;
-}
 
 .bg-pink>h2{
   margin-left: -140px;

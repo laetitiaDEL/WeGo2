@@ -1,13 +1,13 @@
 import firebase from '../firebase';
-const db = firebase.ref("/articles");
+const db = firebase.ref("/users");
 
-class ArticleDataService{
+class UserDataService{
         getAll(){
             return db;
         };
     
-        create(article){
-            return db.push(article);
+        create(user){
+            return db.push(user);
         }
 
         update(key, value){
@@ -23,4 +23,4 @@ class ArticleDataService{
         }
     }
 
-export default new ArticleDataService();
+export default new UserDataService();

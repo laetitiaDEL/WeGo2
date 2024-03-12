@@ -1,13 +1,13 @@
 <template>
-    <footer>
+    <footer v-if="isLoggedIn">
         <nav class="navbar navbar-expand">
             <div class="container-fluid">
                 
                 <div class="collapse navbar-collapse">
                     <div class="navbar-nav">
-                        <router-link to="/"><img src="../assets/logoFooter.svg"></router-link>
+                        <router-link to="/home"><img src="../assets/logoFooter.svg"></router-link>
                         <div class="footer_col">
-                            <router-link to="/home" class="nav-link" aria-current="page" href="#">Accueil</router-link>
+                            <router-link to="/home" class="nav-link">Accueil</router-link>
                             <router-link to="/history" class="nav-link" href="#">Mes sorties passées</router-link>
                             <router-link to="/createOuting" class="nav-link" href="#">Créer une sortie</router-link>
                         </div>  
@@ -28,10 +28,26 @@
     </footer>
 </template>
 
-<script lang="js">
-    export default{
-        name: "Footer"
+<script setup>
+    import { ref } from 'vue';
+    import firebase from 'firebase';
+    import router from '../router';
+
+    const isLoggedIn = ref(false);
+    // switch header "connected"/"not-connected"
+    firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        isLoggedIn.value = true // if we have a user
+    } else {
+        isLoggedIn.value = false // if we do not
     }
+    });
+
+    const signOut = () => {
+        firebase.auth().signOut()
+        router.push('/')
+    }
+
 </script>
 
 <style scoped>

@@ -1,3 +1,3 @@
 <template>
-    <p>Messagerie</p>
+    <p>Contact</p>
 </template>

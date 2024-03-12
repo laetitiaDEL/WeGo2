@@ -1,3 +1,3 @@
 <template>
-    <p>Messagerie</p>
+    <p>Privacy</p>
 </template>

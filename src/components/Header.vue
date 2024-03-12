@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header v-if="isLoggedIn">
         <nav class="navbar navbar-expand-md p-1">
             <div class="container-fluid d-flex">
                 <router-link to="/"><img src="../assets/logoHeader.svg"></router-link>
@@ -8,11 +8,14 @@
                 </button>
                 <div class="collapse navbar-collapse d-md-flex justify-content-center">
                     <div class="navbar-nav">
-                        <router-link to="/ " class="nav-link" aria-current="page" href="#">Accueil</router-link>
+                        <router-link to="/home" class="nav-link">Accueil</router-link>
                         <router-link to="/history" class="nav-link" href="#">Mes sorties passées</router-link>
                         <router-link to="/createOuting" class="nav-link" href="#">Créer une sortie</router-link>
                         <router-link to="/messaging" class="nav-link" href="#">Messages</router-link>
                         <router-link to="/myAccount" class="nav-link" href="#">Mon compte</router-link>
+                        <div class="position-power-off">
+                            <p v-on:click="signOut">Déconnexion</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,8 +34,24 @@
     </header>
 </template>
 
-<script lang="js">
-    export default{
-        name: "Header"
+<script setup>
+    import { ref } from 'vue';
+    import firebase from 'firebase';
+    import router from '../router';
+
+    const isLoggedIn = ref(false);
+    // switch header "connected"/"not-connected"
+    firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        isLoggedIn.value = true // if we have a user
+    } else {
+        isLoggedIn.value = false // if we do not
     }
+    });
+
+    const signOut = () => {
+        firebase.auth().signOut()
+        router.push('/')
+    }
+
 </script>
